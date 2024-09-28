@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package calculator;
+
+// Definimos el servicio Calculator
+service Calculator {
+  // Método para sumar dos números
+  rpc Sum (SumRequest) returns (SumResponse);
+}
+
+// Definición de los mensajes que el método espera
+message SumRequest {
+  int32 a = 1;
+  int32 b = 2;
+}
+
+message SumResponse {
+  int32 result = 1;
+}
