@@ -1,6 +1,6 @@
 import * as grpc from '@grpc/grpc-js';
-import { CalculatorService } from './protos/calculator_grpc_pb';
 import { SumRequest, SumResponse } from './protos/calculator_pb';
+import { CalculatorService } from './protos/calculator_grpc_pb';
 
 function sum(call: grpc.ServerUnaryCall<SumRequest, SumResponse>, callback: grpc.sendUnaryData<SumResponse>) {
     const a = call.request.getA();
