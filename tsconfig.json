@@ -1,19 +1,23 @@
 {
     "compilerOptions": {
-        "experimentalDecorators": true,
-        "module": "commonjs",
-        "moduleResolution": "node",
-        "pretty": true,
-        "sourceMap": true,
-        "target": "es6",
-        "outDir": "./dist",
-        "emitDecoratorMetadata": true,
-        "strictPropertyInitialization": false,
+      "experimentalDecorators": true,
+      "module": "commonjs",  // Usar CommonJS
+      "moduleResolution": "node",  // Resolución de módulos
+      "pretty": true,
+      "sourceMap": true,
+      "target": "es6",  // Compilar a ES6
+      "outDir": "./dist",  // Directorio de salida para los archivos compilados
+      "emitDecoratorMetadata": true,
+      "strictPropertyInitialization": false,
+      "esModuleInterop": true,  // Habilitar interoperabilidad con CommonJS
+      "strict": true,  // Habilitar el chequeo estricto
+      "skipLibCheck": true,  // Saltar chequeo de bibliotecas
+      "forceConsistentCasingInFileNames": true  // Consistencia en mayúsculas y minúsculas
     },
     "include": [
-        "src/**/*.ts"
+      "src/**/*.ts"  // Incluir todos los archivos .ts en la carpeta src
     ],
     "exclude": [
-        "node_modules"
+      "node_modules"  // Excluir la carpeta node_modules
     ]
-}
+  }

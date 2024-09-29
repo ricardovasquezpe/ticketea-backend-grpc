@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "tsc",
-    "dev": "ts-node-dev ./src/serverGrpc.ts",
-    "generate": "grpc_tools_node_protoc --js_out=import_style=commonjs,binary:./protos --grpc_out=./protos --ts_out=./protos -I ./protos ./protos/*.proto",
+    "build": "tsc && npm run copy",
+    "copy": "mkdir -p ./dist/protos && cp ./src/protos/*.js ./dist/protos",
+    "dev": "ts-node-dev --transpile-only src/serverGrpc.ts",
+    "generate": "grpc_tools_node_protoc --js_out=import_style=commonjs,binary:./src/protos --grpc_out=./src/protos --ts_out=./src/protos -I ./src/protos ./src/protos/*.proto",
     "start": "node ./dist/serverGrpc.js",
     "prod": "npm run build && npm run start"
   },
@@ -19,7 +20,7 @@
   },
   "devDependencies": {
     "ts-node": "^10.9.2",
-    "typescript": "^5.3.3",
-    "ts-node-dev": "^2.0.0"
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.3.3"
   }
 }

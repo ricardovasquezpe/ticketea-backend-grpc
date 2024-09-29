@@ -1,1 +1,14 @@
-node_modules
+# Node modules
+node_modules/
+
+# Compiled output
+dist/
+
+# Logs
+*.log
+
+# Environment variables
+.env
+
+# Ignore package-lock.json
+package-lock.json
